@@ -22,9 +22,24 @@ const UserModel = new model("users", {
         "required": "true",
     },
 
+    "nickname": {
+        "type": "string",
+        "default": '',
+    },
+
+    "gender": {
+        "type": "string",
+        "default": '',
+    },
+
     "balance": {
         "type": "number",
-        "default": 0,
+        "default": 1_000_000,
+    },
+
+    "isRegister": {
+        "type": "boolean",
+        "default": "false",
     },
 
     "isBan": {

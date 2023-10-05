@@ -1,21 +1,42 @@
-const { vkUtils } = require("../../../../../../adapters/vk/vkUtils");
+const { vkUtils } = require('../../../../../../adapters/vk/vkUtils');
 
-function registerUserSend(userId) {
-    const text = `Вау ля ты зареган бро`
+const sleep = require('../../../../../../../../pkg/utils/time/sleep');
+const { genderItems } = require('../../../../../../handlers/usecase/gender/templateItems');
+
+async function registerUserSend(userId) {
+    vkUtils.msg({
+        peerId: userId,
+        message: '🎨 Давай начнём создание твоего персонажа',
+    });
+
+    const genderElements = genderItems(1).map(obj => {
+        return {
+            title: obj.title,
+            description: obj.description,
+            photo_id: obj.photo_id,
+            buttons: obj.buttons,
+        };
+    });
+
+    await sleep(400);
 
     vkUtils.msg({
         peerId: userId,
-        message: text
+        message: '🚻 Выбери пол персонажа:',
+        template: JSON.stringify({
+            type: 'carousel',
+            elements: genderElements,
+        }),
     });
 };
 
-function registerUserRefSend(userId, referrerId) {
-    const text = `утебя новый рефик ${userId}`
+async function registerUserRefSend(userId, referrerId) {
+    const text = `утебя новый рефик ${userId}`;
 
     vkUtils.msg({
         peerId: referrerId,
-        message: text
-    })
+        message: text,
+    });
 };
 
 module.exports = {

@@ -7,7 +7,17 @@ const UserManager = {
 
     add: ({ id, referrerId }) => createUser(id, referrerId),
 
-    
+    setGender: ({ userId, gender }) => UserModel.updateOne({ 
+        id: userId 
+    }, {
+        gender: gender,
+    }),
+
+    setNickName: ({ userId, nickname }) => UserModel.updateOne({ 
+        id: userId 
+    }, {
+        nickname: nickname,
+    }),
 };
 
 module.exports = {

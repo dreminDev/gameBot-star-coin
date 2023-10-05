@@ -7,7 +7,7 @@ function executeCommand(msg) {
 
     if (typeof payload === 'undefined') {
         return { executeCommand: "I'm sending it to promo codes for verification." };
-    }
+    };
 
     try {
         let executor = commandList?.[payload];

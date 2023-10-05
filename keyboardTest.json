@@ -1,0 +1,79 @@
+{
+    "buttons": [
+    [
+    {
+    "action": {
+    "type": "text",
+    "label": "🏠 Мой дом",
+    "payload": ""
+    },
+    "color": "positive"
+    },
+    {
+    "action": {
+    "type": "text",
+    "label": "🗺 Карта",
+    "payload": ""
+    },
+    "color": "negative"
+    }
+    ],
+    [
+    {
+    "action": {
+    "type": "text",
+    "label": "💼 Работа",
+    "payload": ""
+    },
+    "color": "negative"
+    },
+    {
+    "action": {
+    "type": "text",
+    "label": "🛍 Магазин",
+    "payload": ""
+    },
+    "color": "secondary"
+    },
+    {
+    "action": {
+    "type": "text",
+    "label": "💰 Бизнес",
+    "payload": ""
+    },
+    "color": "positive"
+    }
+    ],
+    [
+    {
+    "action": {
+    "type": "text",
+    "label": "🏆",
+    "payload": ""
+    },
+    "color": "secondary"
+    },
+    {
+    "action": {
+    "type": "text",
+    "label": "⭐",
+    "payload": ""
+    },
+    "color": "positive"
+    },
+    {
+    "action": {
+    "type": "text",
+    "label": "💬",
+    "payload": ""
+    },
+    "color": "negative"
+    },
+    {
+    "action": {
+    "type": "text",
+    "label": "⚙",
+    "payload": ""
+    },
+    "color": "secondary"
+}
