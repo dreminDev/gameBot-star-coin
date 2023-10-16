@@ -1,3 +1,4 @@
+const purchaceBusiness = require("../../../../src/internal/handlers/usecase/business/purchaceBusiness");
 const genderChange = require("../../../../src/internal/handlers/usecase/gender/genderChange");
 const profile = require("../../../../src/internal/handlers/usecase/profile");
 
@@ -10,6 +11,7 @@ function initUserHandlers(addCommand) {
     addCommand("profile", profile);
 
     addCommand("genderChange", genderChange);
+    addCommand("purchaseBusiness", purchaceBusiness);
 };
 
 module.exports = {

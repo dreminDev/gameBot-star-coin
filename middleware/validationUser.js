@@ -1,10 +1,9 @@
 const { UserManager } = require('../src/internal/domain/user/storage/user/manager/userManager');
 const genderChange = require('../src/internal/handlers/usecase/gender/genderChange');
 
-const { keyboardMain } = require('../src/internal/handlers/keyboard/main');
 const nicknameChange = require('../src/internal/handlers/usecase/nickname/nicknameChange');
 
-const validationUserRegister = async (msg, next) => {
+const validationUser = async (msg) => {
     const userId = msg.senderId;
 
     const user = await UserManager.get(userId, {
@@ -22,7 +21,7 @@ const validationUserRegister = async (msg, next) => {
             id: userId,
             referrerId: msg.referralValue,
         });
-    }
+    };
 
     if (user.isBan) {
         return;
@@ -30,23 +29,15 @@ const validationUserRegister = async (msg, next) => {
 
     if (!user.isRegister) {
         if (!user.gender) {
-            genderChange(msg, 1);
+            genderChange(msg, true);
         } else if (!user.nickname) {
-            nicknameChange(msg);
-        } else if (!user.perDayInc) {
-
+            nicknameChange(msg, true);
         };
     };
 
-    if (['меню', 'начать'].includes(msg.text.toLowerCase()) ) {
-        return msg.send('меню', {
-            keyboard: keyboardMain(user.isAdmin),
-        });
-    };
-
-    next(msg);
+    return true;
 };
 
 module.exports = {
-    validationUserRegister,
+    validationUser,
 };

@@ -1,5 +1,6 @@
 const { vkUtils } = require("../../../adapters/vk/vkUtils");
 const { genderChange } = require("../../../domain/user/service/service");
+
 const nicknameChange = require("../nickname/nicknameChange");
 
 const { genderItems } = require("./templateItems");
@@ -37,7 +38,7 @@ module.exports = async (msg, registerUser) => {
         await genderChange(userId, genderPayload);
 
         if (register) {
-            nicknameChange(msg);
+            nicknameChange(msg, true);
         };
 
 

@@ -4,10 +4,12 @@ const { vkUtils } = require('../../../adapters/vk/vkUtils');
 
 const { nicknameChange } = require('../../../domain/user/service/service');
 const { registerNickKeyboard } = require('../../keyboard/inline');
+const purchase = require("../business/business");
 
-module.exports = async msg => {
+module.exports = async (msg, registerUser) => {
     try {
         const userId = msg.senderId || msg.userId;
+        const register = registerUser;
 
         const inputNickName = await msg.question(
             'Кто ты воин?\n\n✏ Выбери и напиши имя своего персонажа:',
@@ -45,6 +47,10 @@ module.exports = async msg => {
                 message: message,
             }),
         ]);
+
+        if (register) {
+            await purchase(msg, true)
+        };
     } catch (error) {
         console.log(error);
     };

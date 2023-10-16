@@ -1,6 +1,6 @@
 const { green } = require("../../keyboard/help");
 
-const businessItems = (register = 0, index) => {
+const businessItems = (register = 0) => {
     return [
         {
             id: 1,
@@ -12,8 +12,8 @@ const businessItems = (register = 0, index) => {
                         type: 'text',
                         label: '😎 Покупаю',
                         payload: {
-                            command: 'purchase',
-                            id: index,
+                            command: 'purchaseBusiness',
+                            id: 1,
                             register: register,
                         },
                     },
@@ -31,8 +31,8 @@ const businessItems = (register = 0, index) => {
                         type: 'text',
                         label: '😎 Покупаю',
                         payload: {
-                            command: 'purchase',
-                            id: index,
+                            command: 'purchaseBusiness',
+                            id: 2,
                             register: register,
                         },
                     },
@@ -50,8 +50,8 @@ const businessItems = (register = 0, index) => {
                         type: 'text',
                         label: '😎 Покупаю',
                         payload: {
-                            command: 'purchase',
-                            id: index,
+                            command: 'purchaseBusiness',
+                            id: 3,
                             register: register,
                         },
                     },
@@ -69,8 +69,8 @@ const businessItems = (register = 0, index) => {
                         type: 'text',
                         label: '😎 Покупаю',
                         payload: {
-                            command: 'purchase',
-                            id: index,
+                            command: 'purchaseBusiness',
+                            id: 4,
                             register: register,
                         },
                     },
@@ -88,8 +88,8 @@ const businessItems = (register = 0, index) => {
                         type: 'text',
                         label: '😎 Покупаю',
                         payload: {
-                            command: 'purchase',
-                            id: index,
+                            command: 'purchaseBusiness',
+                            id: 5,
                             register: register,
                         },
                     },
@@ -104,12 +104,12 @@ const businessItems = (register = 0, index) => {
             description: "❗️Доступен только для Premium пользователей",
             buttons: [
                 {
-                    action: {
+                    action: {                
                         type: 'text',
                         label: '😎 Покупаю',
                         payload: {
-                            command: 'purchase',
-                            id: index,
+                            command: 'purchaseBusiness',
+                            id: 6,
                             register: register,
                         },
                     },

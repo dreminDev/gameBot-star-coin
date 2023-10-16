@@ -1,9 +1,11 @@
-const validationChat = async (msg, next) => {
+const validationChat = async (msg) => {
+    console.log(`asdas`)
+
     if (msg.isChat) {
         return; 
     };
 
-    next();
+    return true;
 };
 
 module.exports = {
